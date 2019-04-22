@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <title>Github Users Ranking for China.</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body, ul, li, h1 { margin: 0; padding: 0 }
+    html, body { font-size: 16px; font-family: -apple-system,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif; }
+    ul { list-style: none; }
+    body { text-align: center; }
+    a { color: #333; text-decoration: none; transition: all .2s ease-in; }
+    a:hover { color: #1600ff; }
+    a.github-corner:hover .octo-arm { animation: octocat-wave 560ms ease-in-out; }
+    a.github-corner svg { fill: #f1f1f1; color: #000; position: absolute; top: 0; border: 0; right: 0; z-index: 99; width: 70px; height: 70px; }
+    a.github-corner { position: fixed; z-index: 9999; top: 0; right: 0; }
+    .title { padding: 46px 0 0 0; font-size: 18px; }
+    .time, .footer { padding: 0 0 10px 0; font-size: 12px; color: #adadad; }
+    .tabs { padding: 10px 0 15px 0;}
+    .tabs a { background: #e2e2e2; display: inline-block; padding: 3px 7px; font-size: 12px; color: #0366d6; }
+    .tabs a.active { background: #696969; color: #efefef; }
+    .footer { padding: 10px 0 30px 0; }
+    .list { text-align: left; max-width: 380px; margin: 0 auto; padding-bottom: 10px; background-color: #efefef; border-radius: 5px; overflow: hidden; }
+    .list img { width: 36px; height: 36px; border-radius: 3px; display: block; margin: 0 auto; background-color: #e2e2e2; border: 0; }
+    .list a { color: #0366d6; }
+    .list a:hover { color: #1600ff; }
+    .list li { padding: 5px; margin: 0 8px; transition: all .3s; border-bottom: 1px solid #d8d8d8; }
+    .list li.rank-title { background-color: #e2e2e2; margin: 0; padding: 7px 13px; margin-bottom: 10px; border-radius: 0; font-size: 14px; }
+    .list li.rank-title:hover { background: #e2e2e2; }
+    .list li:last-child, .list li.rank-title { border-bottom: 0; }
+    .list li:hover { background: rgba(255, 255, 255, 0.56); }
+    .list li > div { display: table-cell; vertical-align: top; font-size: 14px; }
+    .list li div.rank { padding: 0 8px; }
+    .list li div.rank span { font-weight: bold; }
+    .list li div.details { padding: 2px 0 0 9px; font-size: 12px; float: left; color: #b9b9b9; }
+    .list li div.details a { color: #b9b9b9; transition: all .3s; }
+    .list li div.details a:hover { color: #1600ff; }
+    .list li div.details a:hover svg { fill: #1600ff; }
+    .list li div.details * { vertical-align: middle; }
+    .list li div.details svg { width: 12px; height: 12px; margin-top: 0; margin-right: 2px; fill: #b9b9b9; display: inline-block; }
+    .list li > div.info { width: 100%; }
+    .list li > div.info i { color: #717171; }
+    .list li > div.info a:hover i { color: #333; }
+    .list li div.sub-title { color: #333; margin: 4px 0 0 3px;}
+    .list li span.language,
+    .list li span.star { background: #e2e2e2; display: inline-block; padding: 2px 4px; border-radius: 3px; }
+    .list li div.followers { font-size: 12px; color: #7d7d7d; white-space:nowrap; padding-left: 5px; padding-top: 2px; border-radius: 3px; }
+    .list li div.followers * { vertical-align: middle; }
+    .list li div.followers svg { display: inline-block; fill: #9E9E9E; width: 14px; height: 14px; }
+    .list.repos.trending .select { float: right; line-height: 14px; }
+    .list.repos.trending .select .active { color: #333; font-weight: bold; }
+    .list.repos.trending .language > span { border-radius: 50%; display: inline-block; position: relative; height: 10px; width: 10px; vertical-align: middle; top: -1px; margin-right: 4px; }
+    .list.repos li div.followers { display: inline-block; padding-right: 5px; }
+    .list.repos li div.details { width: 100%; }
+    @keyframes octocat-wave{
+      0%,100%{-webkit-transform:rotate(0); transform:rotate(0);}
+      20%,60%{-webkit-transform:rotate(-25deg); transform:rotate(-25deg);}
+      40%,80%{-webkit-transform:rotate(10deg); transform:rotate(10deg);}
+    }
+  </style>
+</head>
+<body>
+  <a href="https://github.com/jaywcjlove/github-rank" target="_blank" class="github-corner">
+    <svg viewBox="0 0 250 250">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path class="octo-arm" fill="currentColor" style="transform-origin: 130px 106px;" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path fill="currentColor" class="octo-body" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg>
+  </a>
+  <h1 class="title">Github Users Ranking for China.</h1>
+  <div class="time">Last cache created on 2019/4/23 by Github API v3.</div>
+  <div class="tabs">
+    <a class="" href="index.html">Users</a>
+    <a class="" href="repos.html">Repos</a>
+    <a class="active" href="trending.html">Trending</a>
+  </div>
+<ul class="list repos trending">
+    <li class="rank-title">
+      Repositories Trending
+      <span class="select">
+        <a class="" href="trending.html">today</a>
+        <a class="" href="trending-weekly.html">week</a>
+        <a class="active" href="trending-monthly.html">month</a>
+      </span>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 1">1</span>
+          <a href="https://github.com/996icu/996.ICU" target="_blank" title="996icu/996.ICU">996icu/996.ICU</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #dea584;"></span>Rust</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>229591</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>229569 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          Repo for counting stars and contributing. Press F to pay respect to glorious developers.
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 2">2</span>
+          <a href="https://github.com/lib-pku/libpku" target="_blank" title="lib-pku/libpku">lib-pku/libpku</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #f1e05a;"></span>JavaScript</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>14940</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>14840 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          贵校课程资料民间整理
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 3">3</span>
+          <a href="https://github.com/formulahendry/955.WLB" target="_blank" title="formulahendry/955.WLB">formulahendry/955.WLB</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>15318</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>15318 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          955 不加班的公司名单 - 工作 955，work–life balance (工作与生活的平衡)
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 4">4</span>
+          <a href="https://github.com/QSCTech/zju-icicles" target="_blank" title="QSCTech/zju-icicles">QSCTech/zju-icicles</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #e34c26;"></span>HTML</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>9905</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>7100 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          浙江大学课程攻略共享计划
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 5">5</span>
+          <a href="https://github.com/codex-team/editor.js" target="_blank" title="codex-team/editor.js">codex-team/editor.js</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #2b7489;"></span>TypeScript</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>7258</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>7146 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          A block-styled editor with clean JSON output
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 6">6</span>
+          <a href="https://github.com/clone95/Virgilio" target="_blank" title="clone95/Virgilio">clone95/Virgilio</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #DA5B0B;"></span>JupyterNotebook</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>9647</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>6595 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          Your new Mentor for Data Science E-Learning.
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 7">7</span>
+          <a href="https://github.com/Snailclimb/JavaGuide" target="_blank" title="Snailclimb/JavaGuide">Snailclimb/JavaGuide</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #b07219;"></span>Java</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>36346</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5951 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          【Java学习+面试指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 8">8</span>
+          <a href="https://github.com/LisaDziuba/Awesome-Design-Tools" target="_blank" title="LisaDziuba/Awesome-Design-Tools">LisaDziuba/Awesome-Design-Tools</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #f1e05a;"></span>JavaScript</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>14587</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>6619 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          The best design tools for everything 👉
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 9">9</span>
+          <a href="https://github.com/PKUanonym/REKCARC-TSC-UHT" target="_blank" title="PKUanonym/REKCARC-TSC-UHT">PKUanonym/REKCARC-TSC-UHT</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #f34b7d;"></span>C++</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5921</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5917 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          清华大学计算机系课程攻略 Guidance for courses in Department of Computer Science and Technology, Tsinghua University
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 10">10</span>
+          <a href="https://github.com/valeriansaliou/sonic" target="_blank" title="valeriansaliou/sonic">valeriansaliou/sonic</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #dea584;"></span>Rust</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5895</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5874 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          🦔 Fast, lightweight &amp; schema-less search backend. An alternative to Elasticsearch that runs on a few MBs of RAM.
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 11">11</span>
+          <a href="https://github.com/codercom/code-server" target="_blank" title="codercom/code-server">codercom/code-server</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #2b7489;"></span>TypeScript</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>16581</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5703 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          Run VS Code on a remote server.
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 12">12</span>
+          <a href="https://github.com/datawhalechina/pumpkin-book" target="_blank" title="datawhalechina/pumpkin-book">datawhalechina/pumpkin-book</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5433</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5401 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          《机器学习》（西瓜书）公式推导解析，在线阅读地址：https://datawhalechina.github.io/pumpkin-book
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 13">13</span>
+          <a href="https://github.com/nndl/nndl.github.io" target="_blank" title="nndl/nndl.github.io">nndl/nndl.github.io</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #e34c26;"></span>HTML</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>6845</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5092 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          《神经网络与深度学习》 Neural Network and Deep Learning
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 14">14</span>
+          <a href="https://github.com/doocs/advanced-java" target="_blank" title="doocs/advanced-java">doocs/advanced-java</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #b07219;"></span>Java</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>17704</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4875 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          😮 互联网 Java 工程师进阶知识完全扫盲
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 15">15</span>
+          <a href="https://github.com/vuejs/vue" target="_blank" title="vuejs/vue">vuejs/vue</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #f1e05a;"></span>JavaScript</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>136377</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4807 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 16">16</span>
+          <a href="https://github.com/CyC2018/CS-Notes" target="_blank" title="CyC2018/CS-Notes">CyC2018/CS-Notes</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>58343</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4570 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          📚 技术面试必备基础知识
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 17">17</span>
+          <a href="https://github.com/scutan90/DeepLearning-500-questions" target="_blank" title="scutan90/DeepLearning-500-questions">scutan90/DeepLearning-500-questions</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>24387</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4414 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。 全书分为18个章节，50余万字。由于水平有限，书中不妥之处恳请广大读者批评指正。 未完待续............ 如有意合作，联系scutjy2015@163.com 版权所有，违权必究 Tan 2018.06
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 18">18</span>
+          <a href="https://github.com/521xueweihan/git-tips" target="_blank" title="521xueweihan/git-tips">521xueweihan/git-tips</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>7472</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4587 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          Git的奇技淫巧
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 19">19</span>
+          <a href="https://github.com/achael/eht-imaging" target="_blank" title="achael/eht-imaging">achael/eht-imaging</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #3572A5;"></span>Python</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4716</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4654 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          Imaging, analysis, and simulation software for radio interferometry
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 20">20</span>
+          <a href="https://github.com/jhuangtw-dev/xg2xg" target="_blank" title="jhuangtw-dev/xg2xg">jhuangtw-dev/xg2xg</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5550</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4355 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          by ex-googlers, for ex-googlers - a lookup table of similar tech &amp; services
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 21">21</span>
+          <a href="https://github.com/selfteaching/the-craft-of-selfteaching" target="_blank" title="selfteaching/the-craft-of-selfteaching">selfteaching/the-craft-of-selfteaching</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #DA5B0B;"></span>JupyterNotebook</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>8779</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>2973 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          One has no future if one couldn&#39;t teach themself.
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 22">22</span>
+          <a href="https://github.com/zhaoolee/ChromeAppHeroes" target="_blank" title="zhaoolee/ChromeAppHeroes">zhaoolee/ChromeAppHeroes</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #3572A5;"></span>Python</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>6345</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>3957 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          🌈Chrome插件英雄榜, 为优秀的Chrome插件写一本中文说明书, 让Chrome插件英雄们造福人类~ ChromePluginHeroes, Write a Chinese manual for the excellent Chrome plugin, let the Chrome plugin heroes benefit the human~
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 23">23</span>
+          <a href="https://github.com/fyne-io/fyne" target="_blank" title="fyne-io/fyne">fyne-io/fyne</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #00ADD8;"></span>Go</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>5191</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>3872 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          Cross platform GUI in Go based on Material Design
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 24">24</span>
+          <a href="https://github.com/flutter/flutter" target="_blank" title="flutter/flutter">flutter/flutter</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #00B4AB;"></span>Dart</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>60678</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>3431 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          Flutter makes it easy and fast to build beautiful mobile apps.
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 25">25</span>
+          <a href="https://github.com/Microsoft/pyright" target="_blank" title="Microsoft/pyright">Microsoft/pyright</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="language"><span style="background-color: #3572A5;"></span>Python</span>
+          
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>3663</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>3648 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          Static type checker for Python
+        </div>
+      </div>
+    </li>
+    
+</ul>
+
+  <div class="footer">
+    Create by <a href="https://github.com/jaywcjlove" target="_blank">小弟调调™</a>.
+  </div>
+</body>
+</html>
