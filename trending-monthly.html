@@ -23,7 +23,7 @@
     .tabs a { background: #e2e2e2; display: inline-block; padding: 3px 7px; font-size: 12px; color: #0366d6; }
     .tabs a.active { background: #696969; color: #efefef; }
     .footer { padding: 10px 0 30px 0; }
-    .list { text-align: left; max-width: 380px; margin: 0 auto; padding-bottom: 10px; background-color: #efefef; border-radius: 5px; overflow: hidden; }
+    .list { text-align: left; max-width: 470px; margin: 0 auto; padding-bottom: 10px; background-color: #efefef; border-radius: 5px; overflow: hidden; }
     .list img { width: 36px; height: 36px; border-radius: 3px; display: block; margin: 0 auto; background-color: #e2e2e2; border: 0; }
     .list a { color: #0366d6; }
     .list a:hover { color: #1600ff; }
@@ -40,6 +40,7 @@
     .list li div.details a:hover { color: #1600ff; }
     .list li div.details a:hover svg { fill: #1600ff; }
     .list li div.details * { vertical-align: middle; }
+    .list li div.details .localtion { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 150px; display: inline-block; height: 14px; }
     .list li div.details svg { width: 12px; height: 12px; margin-top: 0; margin-right: 2px; fill: #b9b9b9; display: inline-block; }
     .list li > div.info { width: 100%; }
     .list li > div.info i { color: #717171; }
@@ -48,11 +49,11 @@
     .list li span.language,
     .list li span.star { height: 18px; background: #e2e2e2; display: inline-block; padding: 2px 4px; border-radius: 3px; }
     .list li div.followers { font-size: 12px; color: #7d7d7d; white-space:nowrap; padding-left: 5px; padding-top: 2px; border-radius: 3px; }
-    .list li div.followers a { color: #333; }
+    .list li div.followers a { color: #545454; }
     .list li div.followers * { vertical-align: middle; }
     .list li div.followers svg { vertical-align: text-top; display: inline-block; fill: #9E9E9E; width: 14px; height: 14px; }
-    .list.repos.trending .select { float: right; line-height: 14px; }
-    .list.repos.trending .select .active { color: #333; font-weight: bold; }
+    .list .select { float: right; line-height: 14px; }
+    .list .select .active { color: #333; font-weight: bold; }
     .list.repos.trending .language > span { border-radius: 50%; display: inline-block; position: relative; height: 10px; width: 10px; vertical-align: middle; top: -1px; margin-right: 4px; }
     .list.repos li div.followers { display: inline-block; padding-right: 5px; }
     .list.repos li div.details { width: 100%; }
@@ -72,7 +73,7 @@
     </svg>
   </a>
   <h1 class="title"> Github Repositories Trending </h1>
-  <div class="time">Last cache created on 2019/4/23 by Github API v3.</div>
+  <div class="time">Last cache created on 2019/4/24 by Github API v3.</div>
   <div class="tabs">
     <a class="" href="index.html">Users</a>
     <a class="" href="repos.html">Repos</a>
@@ -82,9 +83,9 @@
     <li class="rank-title">
       Repositories Trending
       <span class="select">
-        <a class="" href="trending.html">today</a>
-        <a class="" href="trending-weekly.html">week</a>
-        <a class="active" href="trending-monthly.html">month</a>
+        <a class="" href="trending.html">Today</a>
+        <a class="" href="trending-weekly.html">Week</a>
+        <a class="active" href="trending-monthly.html">Month</a>
       </span>
     </li>
     
@@ -104,13 +105,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>229591</span>
+            <span>231332</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>229569 stars this month</span>
+            <span>230503 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -135,13 +136,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>14940</span>
+            <span>15155</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>14840 stars this month</span>
+            <span>14998 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -162,13 +163,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>15318</span>
+            <span>15414</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>15318 stars this month</span>
+            <span>15373 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -193,13 +194,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>9905</span>
+            <span>10014</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>7100 stars this month</span>
+            <span>7184 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -224,13 +225,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>7258</span>
+            <span>7300</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>7146 stars this month</span>
+            <span>7180 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -255,13 +256,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>9647</span>
+            <span>9713</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>6595 stars this month</span>
+            <span>6444 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -286,13 +287,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>36346</span>
+            <span>36521</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5951 stars this month</span>
+            <span>6018 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -317,13 +318,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>14587</span>
+            <span>14621</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>6619 stars this month</span>
+            <span>6617 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -348,13 +349,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5921</span>
+            <span>6005</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5917 stars this month</span>
+            <span>5972 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -379,13 +380,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5895</span>
+            <span>5917</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5874 stars this month</span>
+            <span>5879 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -410,13 +411,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>16581</span>
+            <span>16754</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5703 stars this month</span>
+            <span>5719 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -437,13 +438,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5433</span>
+            <span>5472</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5401 stars this month</span>
+            <span>5425 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -468,13 +469,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>6845</span>
+            <span>6875</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5092 stars this month</span>
+            <span>5108 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -499,13 +500,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>17704</span>
+            <span>17798</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>4875 stars this month</span>
+            <span>4909 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -518,6 +519,60 @@
       <div class="info">
         <div class="rank">
           <span title="Ranking 15">15</span>
+          <a href="https://github.com/CyC2018/CS-Notes" target="_blank" title="CyC2018/CS-Notes">CyC2018/CS-Notes</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="star" title="Stargazers Count">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>58417</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4592 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          📚 技术面试必备基础知识
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 16">16</span>
+          <a href="https://github.com/521xueweihan/git-tips" target="_blank" title="521xueweihan/git-tips">521xueweihan/git-tips</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <span class="star" title="Stargazers Count">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>7775</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>4790 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          Git的奇技淫巧
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 17">17</span>
           <a href="https://github.com/vuejs/vue" target="_blank" title="vuejs/vue">vuejs/vue</a>
         </div>
         <div class="sub-title followers">
@@ -530,13 +585,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>136377</span>
+            <span>136454</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>4807 stars this month</span>
+            <span>4710 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -548,34 +603,7 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 16">16</span>
-          <a href="https://github.com/CyC2018/CS-Notes" target="_blank" title="CyC2018/CS-Notes">CyC2018/CS-Notes</a>
-        </div>
-        <div class="sub-title followers">
-          
-          <span class="star" title="Stargazers Count">
-            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
-              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
-            </svg>
-            <span>58343</span>
-          </span>
-          <span class="star">
-            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
-              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
-            </svg>
-            <span>4570 stars this month</span>
-          </span>
-        </div>
-        <div class="details">
-          📚 技术面试必备基础知识
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 17">17</span>
+          <span title="Ranking 18">18</span>
           <a href="https://github.com/scutan90/DeepLearning-500-questions" target="_blank" title="scutan90/DeepLearning-500-questions">scutan90/DeepLearning-500-questions</a>
         </div>
         <div class="sub-title followers">
@@ -584,44 +612,17 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>24387</span>
+            <span>24446</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>4414 stars this month</span>
+            <span>4369 stars this month</span>
           </span>
         </div>
         <div class="details">
           深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。 全书分为18个章节，50余万字。由于水平有限，书中不妥之处恳请广大读者批评指正。 未完待续............ 如有意合作，联系scutjy2015@163.com 版权所有，违权必究 Tan 2018.06
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 18">18</span>
-          <a href="https://github.com/521xueweihan/git-tips" target="_blank" title="521xueweihan/git-tips">521xueweihan/git-tips</a>
-        </div>
-        <div class="sub-title followers">
-          
-          <span class="star" title="Stargazers Count">
-            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
-              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
-            </svg>
-            <span>7472</span>
-          </span>
-          <span class="star">
-            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
-              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
-            </svg>
-            <span>4587 stars this month</span>
-          </span>
-        </div>
-        <div class="details">
-          Git的奇技淫巧
         </div>
       </div>
     </li>
@@ -642,13 +643,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>4716</span>
+            <span>4744</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>4654 stars this month</span>
+            <span>4680 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -669,13 +670,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5550</span>
+            <span>5578</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>4355 stars this month</span>
+            <span>4380 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -688,37 +689,6 @@
       <div class="info">
         <div class="rank">
           <span title="Ranking 21">21</span>
-          <a href="https://github.com/selfteaching/the-craft-of-selfteaching" target="_blank" title="selfteaching/the-craft-of-selfteaching">selfteaching/the-craft-of-selfteaching</a>
-        </div>
-        <div class="sub-title followers">
-          
-          <a target="_blank" href="https://github.com/topics/jupyternotebook">
-            <span class="language" title="Programming Language JupyterNotebook"><span style="background-color: #DA5B0B;"></span>JupyterNotebook</span>
-          </a>
-          
-          <span class="star" title="Stargazers Count">
-            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
-              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
-            </svg>
-            <span>8779</span>
-          </span>
-          <span class="star">
-            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
-              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
-            </svg>
-            <span>2973 stars this month</span>
-          </span>
-        </div>
-        <div class="details">
-          One has no future if one couldn&#39;t teach themself.
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 22">22</span>
           <a href="https://github.com/zhaoolee/ChromeAppHeroes" target="_blank" title="zhaoolee/ChromeAppHeroes">zhaoolee/ChromeAppHeroes</a>
         </div>
         <div class="sub-title followers">
@@ -731,17 +701,48 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>6345</span>
+            <span>6471</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>3957 stars this month</span>
+            <span>4038 stars this month</span>
           </span>
         </div>
         <div class="details">
-          🌈Chrome插件英雄榜, 为优秀的Chrome插件写一本中文说明书, 让Chrome插件英雄们造福人类~ ChromePluginHeroes, Write a Chinese manual for the excellent Chrome plugin, let the Chrome plugin heroes benefit the human~
+          🌈谷粒-Chrome插件英雄榜, 为优秀的Chrome插件写一本中文说明书, 让Chrome插件英雄们造福人类~ ChromePluginHeroes, Write a Chinese manual for the excellent Chrome plugin, let the Chrome plugin heroes benefit the human~
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 22">22</span>
+          <a href="https://github.com/selfteaching/the-craft-of-selfteaching" target="_blank" title="selfteaching/the-craft-of-selfteaching">selfteaching/the-craft-of-selfteaching</a>
+        </div>
+        <div class="sub-title followers">
+          
+          <a target="_blank" href="https://github.com/topics/jupyternotebook">
+            <span class="language" title="Programming Language JupyterNotebook"><span style="background-color: #DA5B0B;"></span>JupyterNotebook</span>
+          </a>
+          
+          <span class="star" title="Stargazers Count">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>8788</span>
+          </span>
+          <span class="star">
+            <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
+              <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+            </svg>
+            <span>2787 stars this month</span>
+          </span>
+        </div>
+        <div class="details">
+          One has no future if one couldn&#39;t teach themself.
         </div>
       </div>
     </li>
@@ -762,13 +763,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>5191</span>
+            <span>5198</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>3872 stars this month</span>
+            <span>3667 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -793,13 +794,13 @@
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>60678</span>
+            <span>60748</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>3431 stars this month</span>
+            <span>3437 stars this month</span>
           </span>
         </div>
         <div class="details">
@@ -812,36 +813,32 @@
       <div class="info">
         <div class="rank">
           <span title="Ranking 25">25</span>
-          <a href="https://github.com/Microsoft/pyright" target="_blank" title="Microsoft/pyright">Microsoft/pyright</a>
+          <a href="https://github.com/florinpop17/app-ideas" target="_blank" title="florinpop17/app-ideas">florinpop17/app-ideas</a>
         </div>
         <div class="sub-title followers">
-          
-          <a target="_blank" href="https://github.com/topics/python">
-            <span class="language" title="Programming Language Python"><span style="background-color: #3572A5;"></span>Python</span>
-          </a>
           
           <span class="star" title="Stargazers Count">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>3663</span>
+            <span>3912</span>
           </span>
           <span class="star">
             <svg aria-label="star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img">
               <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
             </svg>
-            <span>3648 stars this month</span>
+            <span>3554 stars this month</span>
           </span>
         </div>
         <div class="details">
-          Static type checker for Python
+          A Collection of application ideas which can be used to improve your coding skills.
         </div>
       </div>
     </li>
     
 </ul>
   <div class="footer">
-    <div class="time">Last cache created on 2019/4/23 by Github API v3.</div>
+    <div class="time">Last cache created on 2019/4/24 by Github API v3.</div>
     Create by <a href="https://github.com/jaywcjlove" target="_blank">小弟调调™</a>.
   </div>
 </body>
