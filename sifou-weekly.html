@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <title> Segmentfault 思否热门 </title>
+  <meta name="description" content="Segmentfault 思否热门">
+  <style>
+    * { box-sizing: border-box; }
+    html, body, ul, li, h1 { margin: 0; padding: 0 }
+    html, body { font-size: 16px; font-family: -apple-system,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif; }
+    ul { list-style: none; }
+    body { text-align: center; }
+    a { color: #333; text-decoration: none; transition: all .2s ease-in; }
+    a:hover { color: #1600ff; }
+    a.github-corner:hover .octo-arm { animation: octocat-wave 560ms ease-in-out; }
+    a.github-corner svg { fill: #f1f1f1; color: #000; position: absolute; top: 0; border: 0; right: 0; z-index: 99; width: 70px; height: 70px; }
+    a.github-corner { position: fixed; z-index: 9999; top: 0; right: 0; }
+    .title { padding: 46px 0 0 0; font-size: 18px; }
+    .time, .footer { padding: 5px 0 2px 0; font-size: 12px; color: #adadad; }
+    .tabs { padding: 10px 0 15px 0;}
+    .tabs a { background: #e2e2e2; display: inline-block; padding: 3px 7px; font-size: 12px; color: #0366d6; }
+    .tabs a.active { background: #696969; color: #efefef; }
+    .footer { padding: 10px 0 30px 0; }
+    .list { text-align: left; max-width: 470px; margin: 0 auto; padding-bottom: 10px; background-color: #efefef; border-radius: 5px; overflow: hidden; }
+    .list img { width: 36px; height: 36px; border-radius: 3px; display: block; margin: 0 auto; background-color: #e2e2e2; border: 0; }
+    .list a { color: #0366d6; }
+    .list a:hover { color: #1600ff; }
+    .list li { padding: 5px; margin: 0 8px; transition: all .3s; border-bottom: 1px solid #d8d8d8; }
+    .list li.rank-title { background-color: #e2e2e2; margin: 0; padding: 7px 13px; margin-bottom: 10px; border-radius: 0; font-size: 14px; }
+    .list li.rank-title:hover { background: #e2e2e2; }
+    .list li:last-child, .list li.rank-title { border-bottom: 0; }
+    .list li:hover { background: rgba(255, 255, 255, 0.56); }
+    .list li > div { display: table-cell; vertical-align: top; font-size: 14px; }
+    .list li div.rank { padding: 0 8px; }
+    .list li div.rank span { font-weight: bold; }
+    .list li div.details { padding: 2px 0 0 9px; font-size: 12px; float: left; color: #b9b9b9; }
+    .list li div.details a { color: #b9b9b9; transition: all .3s; }
+    .list li div.details a:hover { color: #1600ff; }
+    .list li div.details a:hover svg { fill: #1600ff; }
+    .list li div.details * { vertical-align: middle; }
+    .list li div.details .localtion { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 150px; display: inline-block; height: 14px; }
+    .list li div.details svg { width: 12px; height: 12px; margin-top: 0; margin-right: 2px; fill: #b9b9b9; display: inline-block; }
+    .list li > div.info { width: 100%; }
+    .list li > div.info i { color: #717171; }
+    .list li > div.info a:hover i { color: #333; }
+    .list li div.sub-title { color: #333; margin: 4px 0 0 3px;}
+    .list li a.language,
+    .list li span.star { height: 18px; background: #e2e2e2; display: inline-block; padding: 2px 4px; border-radius: 3px; }
+    .list li div.followers { font-size: 12px; color: #7d7d7d; white-space:nowrap; padding-left: 5px; padding-top: 2px; border-radius: 3px; }
+    .list li div.followers a { color: #545454; }
+    .list li div.followers * { vertical-align: middle; }
+    .list li div.followers svg { vertical-align: text-top; display: inline-block; fill: #9E9E9E; width: 14px; height: 14px; }
+    .list .select { float: right; line-height: 14px; }
+    .list .select .active { color: #333; font-weight: bold; }
+    .list.repos.trending .language > span { border-radius: 50%; display: inline-block; position: relative; height: 10px; width: 10px; vertical-align: middle; top: -1px; margin-right: 4px; }
+    .list.repos li div.followers { display: inline-block; padding-right: 5px; }
+    .list.repos li div.details { width: 100%; }
+    @keyframes octocat-wave{
+      0%,100%{-webkit-transform:rotate(0); transform:rotate(0);}
+      20%,60%{-webkit-transform:rotate(-25deg); transform:rotate(-25deg);}
+      40%,80%{-webkit-transform:rotate(10deg); transform:rotate(10deg);}
+    }
+  </style>
+</head>
+<body>
+  <a href="https://github.com/jaywcjlove/github-rank" target="_blank" class="github-corner">
+    <svg viewBox="0 0 250 250">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path class="octo-arm" fill="currentColor" style="transform-origin: 130px 106px;" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path fill="currentColor" class="octo-body" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg>
+  </a>
+  <h1 class="title"> Segmentfault 思否热门 </h1>
+  <div class="time">Last cache created on 2019/5/11 by Github API v3.</div>
+  <div class="tabs">
+    <a class="" href="index.html">Users</a>
+    <a class="" href="repos.html">Repos</a>
+    <a class="" href="trending.html">Trending</a>
+    <a class="active" href="sifou-daily.html">Sifou</a>
+  </div>
+<ul class="list repos ">
+    <li class="rank-title">
+      Segmentfault 思否热门
+      <span class="select">
+        <a class="" href="sifou-daily.html">日热门</a>
+        <a class="active" href="sifou-weekly.html">周热门</a>
+        <a class="" href="sifou-monthly.html">月热门</a>
+      </span>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 1">1</span>
+          <a href="https://segmentfault.com/a/1190000019126657" target="_blank" title="面试官：请你手写一个React脚手架    【已优化至完美版】">面试官：请你手写一个React脚手架    【已优化至完美版】</a>
+        </div>
+        <div class="details">
+          webpack马上要出5了，完全手写一个优化后的脚手架是不可或缺的技能。 本文书写时间 2019年5月9日 , webpack版本 4.30.0最新版本 要转载必须联系本人经过同意才可转载 谢谢！ 杜绝5分钟的技术，我们先深入原理再写...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 2">2</span>
+          <a href="https://segmentfault.com/a/1190000019146249" target="_blank" title="10个有趣的javascript和css库（2019年最新）">10个有趣的javascript和css库（2019年最新）</a>
+        </div>
+        <div class="details">
+          我们的使命是让您了解最新和最酷的Web开发趋势。这就是为什么我们每个月都会发布一些精选的资源，这些资源是我们偶然发现并认为值得您关注的。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 3">3</span>
+          <a href="https://segmentfault.com/a/1190000019132065" target="_blank" title="使用CSS实现逼真的水波纹点击效果">使用CSS实现逼真的水波纹点击效果</a>
+        </div>
+        <div class="details">
+          虽然webkit具有遮罩的能力（webkit mask），不过webkit虽然强大，但在跨浏览器上总是它的罩门，况且在性能上也是往往会造成困扰（这也是为什么chrome要这么吃资源了），因此撇开webkit不谈，我们该用什么方法，才...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 4">4</span>
+          <a href="https://segmentfault.com/a/1190000019120547" target="_blank" title="旗帜鲜明地抵制 CSDN 下载（盗版）站！">旗帜鲜明地抵制 CSDN 下载（盗版）站！</a>
+        </div>
+        <div class="details">
+          SegmentFault 上线付费课程以来，对于内容质量一直严格把关，讲师认真备课，课后为学员答疑，广受好评。然而近期有多位 SegmentFault 讲师反馈在 CSDN 下载频道出现了大量他的盗版课程。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 5">5</span>
+          <a href="https://segmentfault.com/a/1190000019122005" target="_blank" title="手摸手，带你用vue撸后台 系列五(v4.0新版本)">手摸手，带你用vue撸后台 系列五(v4.0新版本)</a>
+        </div>
+        <div class="details">
+          vue-element-admin 从 2017.04.17提交第一个 commit 以来，维护至今已经有两年多的时间了了，发布了四十多个版本，收获了三万多的 stars，远远的超出了自己的预期。距离上次手摸手系列教程也已经过去了很久，主要...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 6">6</span>
+          <a href="https://segmentfault.com/a/1190000019148126" target="_blank" title="[打包优化]从0到1搭建element后台框架优化篇">[打包优化]从0到1搭建element后台框架优化篇</a>
+        </div>
+        <div class="details">
+          hello,咱又见了~~嘻嘻。本次主要来说说这个打包优化的问题。一个vue项目从开发到上线必须得经历打包过程，一个项目的打包优化与否都决定了你这个项目的运行速度以及用户体验。本次主要是针对vue.config,js的配置...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 7">7</span>
+          <a href="https://segmentfault.com/a/1190000019147365" target="_blank" title="What&#39;s New in JavaScript">What&#39;s New in JavaScript</a>
+        </div>
+        <div class="details">
+          前几天 Google IO 上 V8 团队为我们分享了《What&#39;s New in JavaScript》主题，分享的语速很慢推荐大家可以都去听听就当锻炼下听力了。看完之后我整理了一个文字版帮助大家快速了解分享内容，嘉宾主要是分享了以下...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 8">8</span>
+          <a href="https://segmentfault.com/a/1190000019147630" target="_blank" title="用JavaScript实现插入排序">用JavaScript实现插入排序</a>
+        </div>
+        <div class="details">
+          插入排序是一种非常简单的算法，最适合大部分已经被排好序的数据。在开始之前，通过可视化演示算法如何运作一个好主意。你可以参考前面的动画来了解插入排序的工作原理。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 9">9</span>
+          <a href="https://segmentfault.com/a/1190000019142845" target="_blank" title="系统的讲解 - PHP WEB 安全防御">系统的讲解 - PHP WEB 安全防御</a>
+        </div>
+        <div class="details">
+          SQL注入攻击是通过WEB表单提交，在URL参数提交或Cookie参数提交，将怀有恶意的“字符串”，提交给后台数据库，欺骗服务器执行恶意的SQL语句。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 10">10</span>
+          <a href="https://segmentfault.com/a/1190000019131399" target="_blank" title="浅谈小程序运行机制">浅谈小程序运行机制</a>
+        </div>
+        <div class="details">
+          接触小程序有一段时间了，总得来说小程序开发门槛比较低，但其中基本的运行机制和原理还是要懂的。“比如我在面试的时候问到一个关于小程序的问题，问小程序有window对象吗？他说有吧”，但其实是没有的。感觉他并...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 11">11</span>
+          <a href="https://segmentfault.com/a/1190000019101916" target="_blank" title="12个提高 JavaScript 技能的概念！">12个提高 JavaScript 技能的概念！</a>
+        </div>
+        <div class="details">
+          JavaScript 是一种复杂的语言。如果是你是高级或者初级 JavaScript 开发人员，了解它的基本概念非常重要。本文介绍 JavaScript 至关重要的12个概念，但绝对不是说 JavaScript 开发人员只需要知道这些就可以了。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 12">12</span>
+          <a href="https://segmentfault.com/a/1190000019083548" target="_blank" title="小程序如何生成海报分享朋友圈">小程序如何生成海报分享朋友圈</a>
+        </div>
+        <div class="details">
+          项目需求写完有一段时间了，但是还是想回过来总结一下，一是对项目的回顾优化等，二是对坑的地方做个记录，避免以后遇到类似的问题。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 13">13</span>
+          <a href="https://segmentfault.com/a/1190000019140263" target="_blank" title="【前端刷题笔记02】字节跳动2019面试题">【前端刷题笔记02】字节跳动2019面试题</a>
+        </div>
+        <div class="details">
+          客户端请求 -&gt; 服务器响应该请求 -&gt; 服务器确认数据传送完毕， 发送关闭连接的响应 -&gt; 客户端发送响应，在2MSL内未收到回复则视为服务器端已收到该响应并关闭连接接口，客户端关闭连接。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 14">14</span>
+          <a href="https://segmentfault.com/a/1190000019068732" target="_blank" title="看完这篇，你也可以实现一个360度全景插件">看完这篇，你也可以实现一个360度全景插件</a>
+        </div>
+        <div class="details">
+          导读 本文从绘图基础开始讲起，详细介绍了如何使用Three.js开发一个功能齐全的全景插件。 我们先来看一下插件的效果： 如果你对Three.js已经很熟悉了，或者你想跳过基础理论，那么你可以直接从全景预览开始看起。...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 15">15</span>
+          <a href="https://segmentfault.com/a/1190000019116373" target="_blank" title="基于 Github API 的图床 Chrome 插件开发全纪录">基于 Github API 的图床 Chrome 插件开发全纪录</a>
+        </div>
+        <div class="details">
+          最近基于 Github API 开发了一款图床 Chrome 插件 Picee，现在已经开源并上架 Chrome 应用商店。当中的过程涉及到一些有趣的知识点，故将其记录下来。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 16">16</span>
+          <a href="https://segmentfault.com/a/1190000019089997" target="_blank" title="【Swoole源码研究】深入理解Swoole协程实现">【Swoole源码研究】深入理解Swoole协程实现</a>
+        </div>
+        <div class="details">
+          Swoole4为PHP语言提供了强大的CSP协程编程模式，用户可以通过go函数创建一个协程，以达到并发执行的效果，如下面代码所示：
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 17">17</span>
+          <a href="https://segmentfault.com/a/1190000019117897" target="_blank" title="Webpack 是怎样运行的?">Webpack 是怎样运行的?</a>
+        </div>
+        <div class="details">
+          在平时开发中我们经常会用到Webpack这个时下最流行的前端打包工具。它打包开发代码，输出能在各种浏览器运行的代码，提升了开发至发布过程的效率。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 18">18</span>
+          <a href="https://segmentfault.com/a/1190000019142622" target="_blank" title="系统的讲解 - SSO单点登录">系统的讲解 - SSO单点登录</a>
+        </div>
+        <div class="details">
+          比如：淘宝网（www.taobao.com），天猫网（www.tmall.com），聚划算（ju.taobao.com），飞猪网（www.fliggy.com）等，这些都是阿里巴巴集团的网站。在这些网站中，我们在其中一个网站登录了，再访问其他的网站时...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 19">19</span>
+          <a href="https://segmentfault.com/a/1190000019131088" target="_blank" title="ES6—数组新方法（7）">ES6—数组新方法（7）</a>
+        </div>
+        <div class="details">
+          在javascript中，数组是最重要的数据结构，没有之一，因为所有的数据结构都可以使用数组模拟和表达。可以说掌握了数组，就掌握了js与数据操作的大部分核心功能。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 20">20</span>
+          <a href="https://segmentfault.com/a/1190000019119371" target="_blank" title="关于PHP加解密之终扯到ECDH了（API安全加强篇三）">关于PHP加解密之终扯到ECDH了（API安全加强篇三）</a>
+        </div>
+        <div class="details">
+          但是，我知道大家最讨厌在看这种文章的时候冒出来的一坨“椭圆曲线”、“素数”、“质数”等等这样的玩意，反正看也看不懂，理解也理解不了，背也背不过，所以我索性就不写这些玩意，一点儿都不写，不装任何逼（然而实...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 21">21</span>
+          <a href="https://segmentfault.com/a/1190000019130880" target="_blank" title="MySQL InnoDB索引原理和算法">MySQL InnoDB索引原理和算法</a>
+        </div>
+        <div class="details">
+          也许你经常用MySQL，也会经常用索引，但是对索引的原理和高级功能却并不知道，我们在这里一起学习下。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 22">22</span>
+          <a href="https://segmentfault.com/a/1190000019143914" target="_blank" title="积梦前端的路由方案 ruled-router">积梦前端的路由方案 ruled-router</a>
+        </div>
+        <div class="details">
+          积梦([链接] ) 是一个为制造业制作的一个平台.积梦的前端基于 React 做开发的. 早期使用 React Router.后来出现了一些 TypeScript 集成还有定制化的需求, 自己探索了一套方案.
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 23">23</span>
+          <a href="https://segmentfault.com/a/1190000019145698" target="_blank" title="ArrayList 线程安全性学习">ArrayList 线程安全性学习</a>
+        </div>
+        <div class="details">
+          看了看，最近也没有好公司来办宣讲会，也就没了投简历的意向。最近看了看面试题，想着补一补基础，以后面几家Spring Cloud的企业，去和面试官交流交流。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 24">24</span>
+          <a href="https://segmentfault.com/a/1190000019135488" target="_blank" title="FE.BASE-前端设计模式、编码与重构笔记">FE.BASE-前端设计模式、编码与重构笔记</a>
+        </div>
+        <div class="details">
+          高质量Javascript Javascript特性：面向对象，无类，原型 可维护的代码(可读;一致;可预测;看起来像是同一个人写的;文档) 减少全局对象，传参访问全局对象 单 var 模式，忘记 var 时的副作用(显式声明的全局变量无...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 25">25</span>
+          <a href="https://segmentfault.com/a/1190000019123839" target="_blank" title="亲历，创业公司如何死掉的">亲历，创业公司如何死掉的</a>
+        </div>
+        <div class="details">
+          虽然目前尚未离职，但期限迫在眉睫。失望过后还得整顿自己再出发，新开始之前老感觉缺点东西，还是回顾一下东家是如何在这条创业路上死掉的，顺便记录下，已警示后来的自己。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 26">26</span>
+          <a href="https://segmentfault.com/a/1190000019122105" target="_blank" title="总结常用伪类与伪元素">总结常用伪类与伪元素</a>
+        </div>
+        <div class="details">
+          一个 CSS 伪类是以一个冒号(:)作为前缀，被添加到一个选择器末尾的关键字，可以让指定的元素在特定的状态呈现指定的样式。例如 :hover，当用户悬停在指定元素时，可以在这个状态给指定元素添加相应的样式，是在 D...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 27">27</span>
+          <a href="https://segmentfault.com/a/1190000019116365" target="_blank" title="你必须知道的Git命令">你必须知道的Git命令</a>
+        </div>
+        <div class="details">
+          这篇笔记是为了学习Git知识而收集总结的，主要是看受一篇帖子《你可能不知道的15条Git命令》的影响，才想记录这篇笔记的，如有雷同，纯属巧合。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 28">28</span>
+          <a href="https://segmentfault.com/a/1190000019126052" target="_blank" title="一次非常有意思的SQL优化经历:从30248.271s到0.001s">一次非常有意思的SQL优化经历:从30248.271s到0.001s</a>
+        </div>
+        <div class="details">
+          本文来源 | toutiao.com/i6668275333034148356 作者 | Java技术架构 背景介绍 我用的数据库是mysql5.6，下面简单的介绍下场景： 课程表： 数据100条 学生表： 数据70000条 学生成绩表SC： 数据70w条 查询目的： ...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 29">29</span>
+          <a href="https://segmentfault.com/a/1190000019111452" target="_blank" title="VueCli+Node+mongodb打造个人博客（含前台展示及后台管理系统）（上）">VueCli+Node+mongodb打造个人博客（含前台展示及后台管理系统）（上）</a>
+        </div>
+        <div class="details">
+          可以看到，在整个项目中，没有页面的跳转只有前后端的数据交换，所有的页面更新都是组件更新和数据更新后端只对数据库进行增删查改，以及接受前端的异步请求返回数据所以本质上这是一个单页面应用所有的重心全部...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 30">30</span>
+          <a href="https://segmentfault.com/a/1190000019134983" target="_blank" title="前端面试题及答案 - CSS篇">前端面试题及答案 - CSS篇</a>
+        </div>
+        <div class="details">
+          这篇文章并不是最全的前端面试题（没有最全，只有更全），只是针对自己面试过程中遇到的一些难题、容易忽略的题做一个简单的笔记，方便后面有面试需要的小伙伴们借鉴，后续内容会不定时更新，有错误之处希望大家...
+        </div>
+      </div>
+    </li>
+    
+</ul>
+  <div class="footer">
+    <p>
+      <a href="https://github.com/jaywcjlove/github-rank/network" target="_blank">
+        <img src="https://img.shields.io/github/forks/jaywcjlove/github-rank.svg">
+      </a>
+      <a href="https://github.com/jaywcjlove/github-rank/stargazers" target="_blank">
+        <img src="https://img.shields.io/github/stars/jaywcjlove/github-rank.svg">
+      </a>
+      <a href="https://www.npmjs.com/package/@wcj/github-rank" target="_blank">
+        <img src="https://img.shields.io/npm/v/@wcj/github-rank.svg">
+      </a>
+      <a href="https://unpkg.com/@wcj/github-rank/web/index.html" target="_blank">
+        <img src="https://img.shields.io/npm/v/@wcj/github-rank.svg?label=unpkg">
+      </a>
+    </p>
+    <div class="time">Last cache created on 2019/5/11 by Github API v3.</div>
+    Create by <a href="https://github.com/jaywcjlove" target="_blank">小弟调调™</a>.
+  </div>
+</body>
+</html>
