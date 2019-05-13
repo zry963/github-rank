@@ -29,7 +29,7 @@
     .list a { color: #0366d6; }
     .list a:hover { color: #1600ff; }
     .list li { padding: 5px; margin: 0 8px; transition: all .3s; border-bottom: 1px solid #d8d8d8; }
-    .list li.rank-title { background-color: #e2e2e2; margin: 0; padding: 7px 13px; margin-bottom: 10px; border-radius: 0; font-size: 14px; }
+    .list li.rank-title { background-color: #e2e2e2; margin: 0; padding: 7px 13px; margin-bottom: 10px; border-radius: 0; font-size: 14px; line-height: 16px; }
     .list li.rank-title:hover { background: #e2e2e2; }
     .list li:last-child, .list li.rank-title { border-bottom: 0; }
     .list li:hover { background: rgba(255, 255, 255, 0.56); }
@@ -53,7 +53,7 @@
     .list li div.followers a { color: #545454; }
     .list li div.followers * { vertical-align: middle; }
     .list li div.followers svg { vertical-align: text-top; display: inline-block; fill: #9E9E9E; width: 14px; height: 14px; }
-    .list .select { float: right; line-height: 14px; }
+    .list .select { float: right; line-height: 14px; line-height: 16px; }
     .list .select .active { color: #333; font-weight: bold; }
     .list.repos.trending .language > span { border-radius: 50%; display: inline-block; position: relative; height: 10px; width: 10px; vertical-align: middle; top: -1px; margin-right: 4px; }
     .list.repos li div.followers { display: inline-block; padding-right: 5px; }
@@ -74,7 +74,7 @@
     </svg>
   </a>
   <h1 class="title"> Segmentfault 思否热门 </h1>
-  <div class="time">Last cache created on 2019/5/12 by Github API v3.</div>
+  <div class="time">Last cache created on 2019/5/13 by Github API v3.</div>
   <div class="tabs">
     <a class="" href="index.html">Users</a>
     <a class="" href="repos.html">Repos</a>
@@ -95,6 +95,18 @@
       <div class="info">
         <div class="rank">
           <span title="Ranking 1">1</span>
+          <a href="https://segmentfault.com/a/1190000019158228" target="_blank" title="【面试篇】寒冬求职之你必须要懂的Web安全">【面试篇】寒冬求职之你必须要懂的Web安全</a>
+        </div>
+        <div class="details">
+          随着互联网的发展，各种Web应用变得越来越复杂，满足了用户的各种需求的同时，各种网络安全问题也接踵而至。作为前端工程师的我们也逃不开这个问题，今天一起看一看Web前端有哪些安全问题以及我们如何去检测和防...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 2">2</span>
           <a href="https://segmentfault.com/a/1190000019126657" target="_blank" title="9102年：手写一个React脚手架    【已优化至完美版】">9102年：手写一个React脚手架    【已优化至完美版】</a>
         </div>
         <div class="details">
@@ -106,115 +118,7 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 2">2</span>
-          <a href="https://segmentfault.com/a/1190000018959389" target="_blank" title="可能这些是你想要的H5软键盘兼容方案">可能这些是你想要的H5软键盘兼容方案</a>
-        </div>
-        <div class="details">
-          最近一段时间在做 H5 聊天项目，踩过其中一大坑：输入框获取焦点，软键盘弹起，要求输入框吸附（或顶）在输入法框上。需求很明确，看似很简单，其实不然。从实验过一些机型上看，发现主要存在以下问题：
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
           <span title="Ranking 3">3</span>
-          <a href="https://segmentfault.com/a/1190000019120547" target="_blank" title="旗帜鲜明地抵制 CSDN 下载（盗版）站！">旗帜鲜明地抵制 CSDN 下载（盗版）站！</a>
-        </div>
-        <div class="details">
-          SegmentFault 上线付费课程以来，对于内容质量一直严格把关，讲师认真备课，课后为学员答疑，广受好评。然而近期有多位 SegmentFault 讲师反馈在 CSDN 下载频道出现了大量他的盗版课程。
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 4">4</span>
-          <a href="https://segmentfault.com/a/1190000018992363" target="_blank" title="一名【合格】前端工程师的自检清单">一名【合格】前端工程师的自检清单</a>
-        </div>
-        <div class="details">
-          前端开发是一个非常特殊的行业，它的历史实际上不是很长，但是知识之繁杂，技术迭代速度之快是其他技术所不能比拟的。
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 5">5</span>
-          <a href="https://segmentfault.com/a/1190000019122005" target="_blank" title="手摸手，带你用vue撸后台 系列五(v4.0新版本)">手摸手，带你用vue撸后台 系列五(v4.0新版本)</a>
-        </div>
-        <div class="details">
-          vue-element-admin 从 2017.04.17提交第一个 commit 以来，维护至今已经有两年多的时间了了，发布了四十多个版本，收获了三万多的 stars，远远的超出了自己的预期。距离上次手摸手系列教程也已经过去了很久，主要...
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 6">6</span>
-          <a href="https://segmentfault.com/a/1190000019119807" target="_blank" title="为什么 React16 对开发人员来说是一种福音">为什么 React16 对开发人员来说是一种福音</a>
-        </div>
-        <div class="details">
-          就像人们对更新移动应用程序和操作系统感到兴奋一样，开发人员也应该对更新框架感到兴奋。不同框架的新版本具有新特性和开箱即用的技巧。
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 7">7</span>
-          <a href="https://segmentfault.com/a/1190000019147365" target="_blank" title="What&#39;s New in JavaScript">What&#39;s New in JavaScript</a>
-        </div>
-        <div class="details">
-          前几天 Google IO 上 V8 团队为我们分享了《What&#39;s New in JavaScript》主题，分享的语速很慢推荐大家可以都去听听就当锻炼下听力了。看完之后我整理了一个文字版帮助大家快速了解分享内容，嘉宾主要是分享了以下...
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 8">8</span>
-          <a href="https://segmentfault.com/a/1190000019083548" target="_blank" title="小程序如何生成海报分享朋友圈">小程序如何生成海报分享朋友圈</a>
-        </div>
-        <div class="details">
-          项目需求写完有一段时间了，但是还是想回过来总结一下，一是对项目的回顾优化等，二是对坑的地方做个记录，避免以后遇到类似的问题。
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 9">9</span>
-          <a href="https://segmentfault.com/a/1190000019132065" target="_blank" title="使用CSS实现逼真的水波纹点击效果">使用CSS实现逼真的水波纹点击效果</a>
-        </div>
-        <div class="details">
-          虽然webkit具有遮罩的能力（webkit mask），不过webkit虽然强大，但在跨浏览器上总是它的罩门，况且在性能上也是往往会造成困扰（这也是为什么chrome要这么吃资源了），因此撇开webkit不谈，我们该用什么方法，才...
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 10">10</span>
-          <a href="https://segmentfault.com/a/1190000018922732" target="_blank" title="45个值得收藏的 CSS 形状">45个值得收藏的 CSS 形状</a>
-        </div>
-        <div class="details">
-          CSS能够生成各种形状。正方形和矩形很容易，因为它们是 web 的自然形状。添加宽度和高度，就得到了所需的精确大小的矩形。添加边框半径，你就可以把这个形状变成圆形，足够多的边框半径，你就可以把这些矩形变成...
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 11">11</span>
           <a href="https://segmentfault.com/a/1190000019055976" target="_blank" title="用vscode开发vue应用">用vscode开发vue应用</a>
         </div>
         <div class="details">
@@ -226,7 +130,115 @@
     <li>
       <div class="info">
         <div class="rank">
+          <span title="Ranking 4">4</span>
+          <a href="https://segmentfault.com/a/1190000018959389" target="_blank" title="可能这些是你想要的H5软键盘兼容方案">可能这些是你想要的H5软键盘兼容方案</a>
+        </div>
+        <div class="details">
+          最近一段时间在做 H5 聊天项目，踩过其中一大坑：输入框获取焦点，软键盘弹起，要求输入框吸附（或顶）在输入法框上。需求很明确，看似很简单，其实不然。从实验过一些机型上看，发现主要存在以下问题：
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 5">5</span>
+          <a href="https://segmentfault.com/a/1190000019156097" target="_blank" title="【周刊-3】三年大厂面试官-十道前端面试题（欢迎挑战）">【周刊-3】三年大厂面试官-十道前端面试题（欢迎挑战）</a>
+        </div>
+        <div class="details">
+          在两家大厂工作了6年，当了3年的前端面试官，把一些较难的面试题与答案汇总在我的Github中。希望对大家有所帮助，助力大家进入自己理想的企业。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 6">6</span>
+          <a href="https://segmentfault.com/a/1190000018992363" target="_blank" title="一名【合格】前端工程师的自检清单">一名【合格】前端工程师的自检清单</a>
+        </div>
+        <div class="details">
+          前端开发是一个非常特殊的行业，它的历史实际上不是很长，但是知识之繁杂，技术迭代速度之快是其他技术所不能比拟的。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 7">7</span>
+          <a href="https://segmentfault.com/a/1190000019120547" target="_blank" title="旗帜鲜明地抵制 CSDN 下载（盗版）站！">旗帜鲜明地抵制 CSDN 下载（盗版）站！</a>
+        </div>
+        <div class="details">
+          SegmentFault 上线付费课程以来，对于内容质量一直严格把关，讲师认真备课，课后为学员答疑，广受好评。然而近期有多位 SegmentFault 讲师反馈在 CSDN 下载频道出现了大量他的盗版课程。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 8">8</span>
+          <a href="https://segmentfault.com/a/1190000019122005" target="_blank" title="手摸手，带你用vue撸后台 系列五(v4.0新版本)">手摸手，带你用vue撸后台 系列五(v4.0新版本)</a>
+        </div>
+        <div class="details">
+          vue-element-admin 从 2017.04.17提交第一个 commit 以来，维护至今已经有两年多的时间了了，发布了四十多个版本，收获了三万多的 stars，远远的超出了自己的预期。距离上次手摸手系列教程也已经过去了很久，主要...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 9">9</span>
+          <a href="https://segmentfault.com/a/1190000019153289" target="_blank" title="一张思维导图辅助你深入了解 Vue | Vue-Router | Vuex 源码架构">一张思维导图辅助你深入了解 Vue | Vue-Router | Vuex 源码架构</a>
+        </div>
+        <div class="details">
+          本文内容讲解的内容：一张思维导图辅助你深入了解 Vue | Vue-Router | Vuex 源码架构。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 10">10</span>
+          <a href="https://segmentfault.com/a/1190000019083548" target="_blank" title="小程序如何生成海报分享朋友圈">小程序如何生成海报分享朋友圈</a>
+        </div>
+        <div class="details">
+          项目需求写完有一段时间了，但是还是想回过来总结一下，一是对项目的回顾优化等，二是对坑的地方做个记录，避免以后遇到类似的问题。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 11">11</span>
+          <a href="https://segmentfault.com/a/1190000019147365" target="_blank" title="What&#39;s New in JavaScript">What&#39;s New in JavaScript</a>
+        </div>
+        <div class="details">
+          前几天 Google IO 上 V8 团队为我们分享了《What&#39;s New in JavaScript》主题，分享的语速很慢推荐大家可以都去听听就当锻炼下听力了。看完之后我整理了一个文字版帮助大家快速了解分享内容，嘉宾主要是分享了以下...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
           <span title="Ranking 12">12</span>
+          <a href="https://segmentfault.com/a/1190000018922732" target="_blank" title="45个值得收藏的 CSS 形状">45个值得收藏的 CSS 形状</a>
+        </div>
+        <div class="details">
+          CSS能够生成各种形状。正方形和矩形很容易，因为它们是 web 的自然形状。添加宽度和高度，就得到了所需的精确大小的矩形。添加边框半径，你就可以把这个形状变成圆形，足够多的边框半径，你就可以把这些矩形变成...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 13">13</span>
           <a href="https://segmentfault.com/a/1190000019131399" target="_blank" title="浅谈小程序运行机制">浅谈小程序运行机制</a>
         </div>
         <div class="details">
@@ -238,7 +250,43 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 13">13</span>
+          <span title="Ranking 14">14</span>
+          <a href="https://segmentfault.com/a/1190000019153177" target="_blank" title="【译】三分钟掌握 React 高阶组件">【译】三分钟掌握 React 高阶组件</a>
+        </div>
+        <div class="details">
+          掌握这个有用的模式，停止在 React Components 中重复逻辑！ 😎原文：React Higher Order Components in 3 minutes作者：Jhey Tompkins译者：博轩 PS：今天是母亲节，先祝所有母亲大人们节日快乐啦 👏👏👏
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 15">15</span>
+          <a href="https://segmentfault.com/a/1190000019151901" target="_blank" title="从0开始Go语言，用Golang搭建网站">从0开始Go语言，用Golang搭建网站</a>
+        </div>
+        <div class="details">
+          实践是最好的学习方式 零基础通过开发Web服务学习Go语言 本文适合有一定编程基础，但是没有Go语言基础的同学。 也就是俗称的“骗你”学Go语言系列。 这是一个适合阅读的系列，我希望您能够在车上、厕所、餐厅都阅读...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 16">16</span>
+          <a href="https://segmentfault.com/a/1190000019156601" target="_blank" title="基于 HTML5 WebGL 的挖掘机 3D 可视化应用">基于 HTML5 WebGL 的挖掘机 3D 可视化应用</a>
+        </div>
+        <div class="details">
+          在工业互联网以及物联网的影响下，人们对于机械的管理，机械的可视化，机械的操作可视化提出了更高的要求。如何在一个系统中完整的显示机械的运行情况，机械的运行轨迹，或者机械的机械动作显得尤为的重要，因为...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 17">17</span>
           <a href="https://segmentfault.com/a/1190000019068732" target="_blank" title="看完这篇，你也可以实现一个360度全景插件">看完这篇，你也可以实现一个360度全景插件</a>
         </div>
         <div class="details">
@@ -250,11 +298,11 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 14">14</span>
-          <a href="https://segmentfault.com/a/1190000019101916" target="_blank" title="12个提高 JavaScript 技能的概念！">12个提高 JavaScript 技能的概念！</a>
+          <span title="Ranking 18">18</span>
+          <a href="https://segmentfault.com/a/1190000019161737" target="_blank" title="从 React Native 到 Flutter，移动跨平台方案的真相">从 React Native 到 Flutter，移动跨平台方案的真相</a>
         </div>
         <div class="details">
-          JavaScript 是一种复杂的语言。如果是你是高级或者初级 JavaScript 开发人员，了解它的基本概念非常重要。本文介绍 JavaScript 至关重要的12个概念，但绝对不是说 JavaScript 开发人员只需要知道这些就可以了。
+          2018 年 12 月，Google 发布了 Flutter 1.0 正式版，似乎再次点燃了人们对移动跨平台开发的热情。上一次出现类似的情况，是在 15 年年初，Facebook 发布 React Native 的时候。四年不到的时间里，有两家大公司相...
         </div>
       </div>
     </li>
@@ -262,11 +310,11 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 15">15</span>
-          <a href="https://segmentfault.com/a/1190000019089997" target="_blank" title="【Swoole源码研究】深入理解Swoole协程实现">【Swoole源码研究】深入理解Swoole协程实现</a>
+          <span title="Ranking 19">19</span>
+          <a href="https://segmentfault.com/a/1190000019154021" target="_blank" title="13个帮你提高开发效率的现代CSS框架">13个帮你提高开发效率的现代CSS框架</a>
         </div>
         <div class="details">
-          Swoole4为PHP语言提供了强大的CSP协程编程模式，用户可以通过go函数创建一个协程，以达到并发执行的效果，如下面代码所示：
+          本文将向你介绍一系列顶级CSS框架。有些人可能听说过，也可能对有些人是全新的。但它们都提供了各种有用的先进功能，可以改善你的工作流程。开始吧！
         </div>
       </div>
     </li>
@@ -274,7 +322,19 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 16">16</span>
+          <span title="Ranking 20">20</span>
+          <a href="https://segmentfault.com/a/1190000019132065" target="_blank" title="使用CSS实现逼真的水波纹点击效果">使用CSS实现逼真的水波纹点击效果</a>
+        </div>
+        <div class="details">
+          虽然webkit具有遮罩的能力（webkit mask），不过webkit虽然强大，但在跨浏览器上总是它的罩门，况且在性能上也是往往会造成困扰（这也是为什么chrome要这么吃资源了），因此撇开webkit不谈，我们该用什么方法，才...
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 21">21</span>
           <a href="https://segmentfault.com/a/1190000019051193" target="_blank" title="PHP超低内存遍历目录文件和读取超大文件">PHP超低内存遍历目录文件和读取超大文件</a>
         </div>
         <div class="details">
@@ -286,11 +346,11 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 17">17</span>
-          <a href="https://segmentfault.com/a/1190000019151460" target="_blank" title="前端插件库">前端插件库</a>
+          <span title="Ranking 22">22</span>
+          <a href="https://segmentfault.com/a/1190000019089997" target="_blank" title="【Swoole源码研究】深入理解Swoole协程实现">【Swoole源码研究】深入理解Swoole协程实现</a>
         </div>
         <div class="details">
-          DataTables是jQuery的JavaScript函数库，目的是强化表格操作（如搜索、排序），并自动加入组件引入表格中，使用非常灵活简便。
+          Swoole4为PHP语言提供了强大的CSP协程编程模式，用户可以通过go函数创建一个协程，以达到并发执行的效果，如下面代码所示：
         </div>
       </div>
     </li>
@@ -298,7 +358,31 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 18">18</span>
+          <span title="Ranking 23">23</span>
+          <a href="https://segmentfault.com/a/1190000019160215" target="_blank" title="Grid布局简介">Grid布局简介</a>
+        </div>
+        <div class="details">
+          Grid 将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。网格是一组相交的水平线和垂直线，它定义了网格的列和行。我们可以将网格元素放置在与这些行和列相关的位置上。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 24">24</span>
+          <a href="https://segmentfault.com/a/1190000019101916" target="_blank" title="12个提高 JavaScript 技能的概念！">12个提高 JavaScript 技能的概念！</a>
+        </div>
+        <div class="details">
+          JavaScript 是一种复杂的语言。如果是你是高级或者初级 JavaScript 开发人员，了解它的基本概念非常重要。本文介绍 JavaScript 至关重要的12个概念，但绝对不是说 JavaScript 开发人员只需要知道这些就可以了。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 25">25</span>
           <a href="https://segmentfault.com/a/1190000019146249" target="_blank" title="10个有趣的javascript和css库（2019年最新）">10个有趣的javascript和css库（2019年最新）</a>
         </div>
         <div class="details">
@@ -310,11 +394,11 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 19">19</span>
-          <a href="https://segmentfault.com/a/1190000019142845" target="_blank" title="系统的讲解 - PHP WEB 安全防御">系统的讲解 - PHP WEB 安全防御</a>
+          <span title="Ranking 26">26</span>
+          <a href="https://segmentfault.com/a/1190000019151460" target="_blank" title="前端插件库">前端插件库</a>
         </div>
         <div class="details">
-          SQL注入攻击是通过WEB表单提交，在URL参数提交或Cookie参数提交，将怀有恶意的“字符串”，提交给后台数据库，欺骗服务器执行恶意的SQL语句。
+          DataTables是jQuery的JavaScript函数库，目的是强化表格操作（如搜索、排序），并自动加入组件引入表格中，使用非常灵活简便。
         </div>
       </div>
     </li>
@@ -322,11 +406,11 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 20">20</span>
-          <a href="https://segmentfault.com/a/1190000019148126" target="_blank" title="[打包优化]从0到1搭建element后台框架优化篇">[打包优化]从0到1搭建element后台框架优化篇</a>
+          <span title="Ranking 27">27</span>
+          <a href="https://segmentfault.com/a/1190000019119807" target="_blank" title="为什么 React16 对开发人员来说是一种福音">为什么 React16 对开发人员来说是一种福音</a>
         </div>
         <div class="details">
-          hello,咱又见了~~嘻嘻。本次主要来说说这个打包优化的问题。一个vue项目从开发到上线必须得经历打包过程，一个项目的打包优化与否都决定了你这个项目的运行速度以及用户体验。本次主要是针对vue.config,js的配置...
+          就像人们对更新移动应用程序和操作系统感到兴奋一样，开发人员也应该对更新框架感到兴奋。不同框架的新版本具有新特性和开箱即用的技巧。
         </div>
       </div>
     </li>
@@ -334,31 +418,7 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 21">21</span>
-          <a href="https://segmentfault.com/a/1190000019140263" target="_blank" title="【前端刷题笔记02】字节跳动2019面试题">【前端刷题笔记02】字节跳动2019面试题</a>
-        </div>
-        <div class="details">
-          客户端请求 -&gt; 服务器响应该请求 -&gt; 服务器确认数据传送完毕， 发送关闭连接的响应 -&gt; 客户端发送响应，在2MSL内未收到回复则视为服务器端已收到该响应并关闭连接接口，客户端关闭连接。
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 22">22</span>
-          <a href="https://segmentfault.com/a/1190000018869555" target="_blank" title="【周刊-2】三年大厂面试官-前端面试题（偏难）">【周刊-2】三年大厂面试官-前端面试题（偏难）</a>
-        </div>
-        <div class="details">
-          在大厂工作了6年，当了3年的前端面试官，把大厂常问的面试题与答案汇总在我的Github中。希望对大家有所帮助，助力大家进入自己理想的企业。
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 23">23</span>
+          <span title="Ranking 28">28</span>
           <a href="https://segmentfault.com/a/1190000018873042" target="_blank" title="2019前端工程师自检清单与思考">2019前端工程师自检清单与思考</a>
         </div>
         <div class="details">
@@ -370,71 +430,11 @@
     <li>
       <div class="info">
         <div class="rank">
-          <span title="Ranking 24">24</span>
-          <a href="https://segmentfault.com/a/1190000019022015" target="_blank" title="【基础】这15种CSS居中的方式，你都用过哪几种？">【基础】这15种CSS居中的方式，你都用过哪几种？</a>
-        </div>
-        <div class="details">
-          CSS居中是前端工程师经常要面对的问题，也是基本技能之一。今天有时间把CSS居中的方案汇编整理了一下，目前包括水平居中，垂直居中及水平垂直居中方案共15种。如有漏掉的，还会陆续的补充进来，算做是一个备忘录吧。
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 25">25</span>
-          <a href="https://segmentfault.com/a/1190000019116373" target="_blank" title="基于 Github API 的图床 Chrome 插件开发全纪录">基于 Github API 的图床 Chrome 插件开发全纪录</a>
-        </div>
-        <div class="details">
-          最近基于 Github API 开发了一款图床 Chrome 插件 Picee，现在已经开源并上架 Chrome 应用商店。当中的过程涉及到一些有趣的知识点，故将其记录下来。
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 26">26</span>
-          <a href="https://segmentfault.com/a/1190000018964794" target="_blank" title="基于vue-cli3.0构建功能完善的移动端架子">基于vue-cli3.0构建功能完善的移动端架子</a>
-        </div>
-        <div class="details">
-          css：sass支持、normalize.css、_mixin.scss、_variables.scss
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 27">27</span>
-          <a href="https://segmentfault.com/a/1190000019151901" target="_blank" title="从0开始Go语言，用Golang搭建网站">从0开始Go语言，用Golang搭建网站</a>
-        </div>
-        <div class="details">
-          实践是最好的学习方式 零基础通过开发Web服务学习Go语言 本问适合有一定编程基础，但是没有Go语言基础的同学。 也就是俗称的“骗你”学Go语言系列。 这是一个适合阅读的系列，我希望您能够在车上、厕所、餐厅都阅读...
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
-          <span title="Ranking 28">28</span>
-          <a href="https://segmentfault.com/a/1190000019104340" target="_blank" title="前端优化">前端优化</a>
-        </div>
-        <div class="details">
-          浏览器发送HTTP请求，服务器收到请求全文后，返回HTTP响应，在浏览器接收之后结束这个过程。浏览器和服务器只有一次互动的机会，浏览器主动发起，而服务器被动地根据收到的请求内容返回结果。一个完整的请求都需...
-        </div>
-      </div>
-    </li>
-    
-    <li>
-      <div class="info">
-        <div class="rank">
           <span title="Ranking 29">29</span>
-          <a href="https://segmentfault.com/a/1190000019119371" target="_blank" title="关于PHP加解密之终扯到ECDH了（API安全加强篇三）">关于PHP加解密之终扯到ECDH了（API安全加强篇三）</a>
+          <a href="https://segmentfault.com/a/1190000018869555" target="_blank" title="【周刊-2】三年大厂面试官-前端面试题（偏难）">【周刊-2】三年大厂面试官-前端面试题（偏难）</a>
         </div>
         <div class="details">
-          但是，我知道大家最讨厌在看这种文章的时候冒出来的一坨“椭圆曲线”、“素数”、“质数”等等这样的玩意，反正看也看不懂，理解也理解不了，背也背不过，所以我索性就不写这些玩意，一点儿都不写，不装任何逼（然而实...
+          在大厂工作了6年，当了3年的前端面试官，把大厂常问的面试题与答案汇总在我的Github中。希望对大家有所帮助，助力大家进入自己理想的企业。
         </div>
       </div>
     </li>
@@ -443,10 +443,10 @@
       <div class="info">
         <div class="rank">
           <span title="Ranking 30">30</span>
-          <a href="https://segmentfault.com/a/1190000018897633" target="_blank" title="11个教程中不常被提及的JavaScript小技巧">11个教程中不常被提及的JavaScript小技巧</a>
+          <a href="https://segmentfault.com/a/1190000019022015" target="_blank" title="【基础】这15种CSS居中的方式，你都用过哪几种？">【基础】这15种CSS居中的方式，你都用过哪几种？</a>
         </div>
         <div class="details">
-          这次我们主要来分享11个在日常教程中不常被提及的JavaScript小技巧，他们往往在我们的日常工作中经常出现，但是我们又很容易忽略。
+          CSS居中是前端工程师经常要面对的问题，也是基本技能之一。今天有时间把CSS居中的方案汇编整理了一下，目前包括水平居中，垂直居中及水平垂直居中方案共15种。如有漏掉的，还会陆续的补充进来，算做是一个备忘录吧。
         </div>
       </div>
     </li>
@@ -467,7 +467,7 @@
         <img src="https://img.shields.io/npm/v/@wcj/github-rank.svg?label=unpkg">
       </a>
     </p>
-    <div class="time">Last cache created on 2019/5/12 by Github API v3.</div>
+    <div class="time">Last cache created on 2019/5/13 by Github API v3.</div>
     Create by <a href="https://github.com/jaywcjlove" target="_blank">小弟调调™</a>.
   </div>
 </body>
