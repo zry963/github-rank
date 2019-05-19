@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <title> 36Kr快讯 </title>
+  <meta name="description" content="36Kr快讯">
+  <style>
+    * { box-sizing: border-box; }
+    html, body, ul, li, h1 { margin: 0; padding: 0 }
+    html, body { font-size: 16px; font-family: -apple-system,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif; }
+    ul { list-style: none; }
+    body { text-align: center; }
+    a { color: #333; text-decoration: none; transition: all .2s ease-in; }
+    a:hover { color: #1600ff; }
+    a.github-corner:hover .octo-arm { animation: octocat-wave 560ms ease-in-out; }
+    a.github-corner svg { fill: #f1f1f1; color: #000; position: absolute; top: 0; border: 0; right: 0; z-index: 99; width: 70px; height: 70px; }
+    a.github-corner { position: fixed; z-index: 9999; top: 0; right: 0; }
+    .title { padding: 46px 0 0 0; font-size: 18px; line-height: 24px; }
+    .time, .footer { padding: 5px 0 2px 0; font-size: 12px; color: #adadad; }
+    .tabs { padding: 10px 0 15px 0;}
+    .tabs a { background: #e2e2e2; display: inline-block; padding: 3px 7px; font-size: 12px; line-height: 16px; color: #0366d6; }
+    .tabs a.active { background: #696969; color: #efefef; }
+    .footer { padding: 10px 0 30px 0; }
+    .list { text-align: left; max-width: 470px; margin: 0 auto; padding-bottom: 10px; background-color: #efefef; border-radius: 5px; overflow: hidden; }
+    .list img { width: 36px; height: 36px; border-radius: 3px; display: block; margin: 0 auto; background-color: #e2e2e2; border: 0; }
+    .list a { color: #0366d6; }
+    .list a:hover { color: #1600ff; }
+    .list li { padding: 5px; margin: 0 8px; transition: all .3s; border-bottom: 1px solid #d8d8d8; }
+    .list li.rank-title { background-color: #e2e2e2; margin: 0; padding: 7px 13px; margin-bottom: 10px; border-radius: 0; font-size: 14px; line-height: 16px; }
+    .list li.rank-title:hover { background: #e2e2e2; }
+    .list li:last-child, .list li.rank-title { border-bottom: 0; }
+    .list li:hover { background: rgba(255, 255, 255, 0.56); }
+    .list li > div { display: table-cell; vertical-align: top; font-size: 14px; }
+    .list li div.rank { padding: 0 8px; }
+    .list li div.rank span { font-weight: bold; }
+    .list li div.details { padding: 2px 0 0 9px; font-size: 12px; float: left; color: #b9b9b9; }
+    .list li div.details a { color: #b9b9b9; transition: all .3s; }
+    .list li div.details a:hover { color: #1600ff; }
+    .list li div.details a:hover svg { fill: #1600ff; }
+    .list li div.details * { vertical-align: middle; }
+    .list li div.details .localtion { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 150px; display: inline-block; height: 14px; }
+    .list li div.details svg { width: 12px; height: 12px; margin-top: 0; margin-right: 2px; fill: #b9b9b9; display: inline-block; }
+    .list li > div.info { width: 100%; }
+    .list li > div.info i { color: #717171; }
+    .list li > div.info a:hover i { color: #333; }
+    .list li div.sub-title { color: #333; margin: 4px 0 0 3px;}
+    .list li a.language,
+    .list li span.star { height: 18px; background: #e2e2e2; display: inline-block; padding: 2px 4px; border-radius: 3px; }
+    .list li div.followers { font-size: 12px; color: #7d7d7d; white-space:nowrap; padding-left: 5px; padding-top: 2px; border-radius: 3px; }
+    .list li div.followers a { color: #545454; }
+    .list li div.followers * { vertical-align: middle; }
+    .list li div.followers svg { vertical-align: text-top; display: inline-block; fill: #9E9E9E; width: 14px; height: 14px; }
+    .list .select { float: right; line-height: 14px; line-height: 16px; }
+    .list .select .active { color: #333; font-weight: bold; }
+    .list.repos.trending .language > span { border-radius: 50%; display: inline-block; position: relative; height: 10px; width: 10px; vertical-align: middle; top: -1px; margin-right: 4px; }
+    .list.repos li div.followers { display: inline-block; padding-right: 5px; }
+    .list.repos li div.details { width: 100%; }
+    @keyframes octocat-wave{
+      0%,100%{-webkit-transform:rotate(0); transform:rotate(0);}
+      20%,60%{-webkit-transform:rotate(-25deg); transform:rotate(-25deg);}
+      40%,80%{-webkit-transform:rotate(10deg); transform:rotate(10deg);}
+    }
+  </style>
+</head>
+<body>
+  <a href="https://github.com/jaywcjlove/github-rank" target="_blank" class="github-corner">
+    <svg viewBox="0 0 250 250">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path class="octo-arm" fill="currentColor" style="transform-origin: 130px 106px;" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path fill="currentColor" class="octo-body" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg>
+  </a>
+  <h1 class="title"> 36Kr快讯 </h1>
+  <div class="time">Last cache created on 2019/5/19 by Github API v3.</div>
+  <div class="tabs">
+    <a class="" href="index.html">Users</a>
+    <a class="" href="repos.html">Repos</a>
+    <a class="" href="trending.html">Trending</a>
+    <a class="" href="sifou-daily.html">Sifou</a>
+    <a class="" href="toutiao-7.html">开发头条</a>
+    <a class="active" href="36kr.html">36Kr</a>
+  </div>
+<ul class="list">
+    <li class="rank-title">
+      <a href="https://36kr.com/newsflashes" target="_blank">36Kr快讯</a>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 1">1</span>
+          <a href="https://www.jiemian.com/article/3140080.html" target="_blank" title="全球已经开始研究6G，全球IPv6论坛主席：2030年将开始部署">全球已经开始研究6G，全球IPv6论坛主席：2030年将开始部署</a>
+        </div>
+        <div class="details">
+          全球IPv6论坛主席Latif Ladid表示，互联网协议由IPv4向IPv6过渡的速度正逐渐加快，IPv6全球普及率已达27%，亚洲将成为IPv6的主战场，印度和中国将成为IPv6最大的用户市场，中国IPv6互联网用户已超过2亿。他指出，推进5G的同时，全球已开始研究6G，“在芬兰进行了相关的研究，6G能够达到100G/秒，到2030年的时候，6G应当能得到部署。”（21世纪经济报道）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 2">2</span>
+          <a href="http://www.xinhuanet.com//2019-05/19/c_1124514624.htm" target="_blank" title="天津将建大数据交易中心加快数据金融体系建设">天津将建大数据交易中心加快数据金融体系建设</a>
+        </div>
+        <div class="details">
+          近日，天津市委网信办、浪潮、中国建设银行签署数据金融合作备忘录。根据该备忘录，天津将建数据交易中心及数据运营公司，以加快数据金融体系建设。具体合作内容包括建立数据运营公司，探索数据资源增值利用实现路径，推动数据金融体系建设；设立数据交易中心，依法开发利用政务、金融及社会数据，促进数据流通交易，打造“以数据为核心、政府引导、市场主导”的数据交易模式。（新华社）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 3">3</span>
+          <a href="http://tech.qq.com/a/20190519/004577.htm" target="_blank" title="欧盟将惩罚网络攻击者：禁止入境冻结资产">欧盟将惩罚网络攻击者：禁止入境冻结资产</a>
+        </div>
+        <div class="details">
+          欧盟出台新规定，相关机构将面向对欧盟构成重大威胁的网络攻击负责的个人实施入境禁令和资产冻结等详细惩罚措施。欧盟成员国理事会在一份声明中表示，这些措施旨在“遏制和应对欧盟构成外部威胁的网络攻击”，将适用于应对源自欧盟以外的网络攻击的实施者。（腾讯科技）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 4">4</span>
+          <a href="http://www.szse.cn/disclosure/listed/bulletinDetail/index.html?68fa621e-23ea-4a43-843a-96824af59b49" target="_blank" title="我爱我家：终止重大资产重组事项">我爱我家：终止重大资产重组事项</a>
+        </div>
+        <div class="details">
+          36氪讯，我爱我家发布公告称，公司原本拟发行股份及支付现金购买南昌中环互联信息服务股份有限公司100%股权。因交易各方未能就此次交易的核心交易条款达成一致意见，公司决定终止本次重大资产重组事项。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 5">5</span>
+          <a href="http://news.cnstock.com/news,bwkx-201905-4377062.htm" target="_blank" title="券商人士：科创板跟投制度有利于发行定价合理">券商人士：科创板跟投制度有利于发行定价合理</a>
+        </div>
+        <div class="details">
+          中子星金融科创板专题研讨会在深圳举办，对于此前上交所确定的2%至5%的跟投比例。上交所相关人员在会上表示，过高的跟投比例或许会影响保荐机构的积极性，太低的比例似乎又难以实现制度设计的初衷，经过了深入调研后交易所才最终确定了这一跟投比例。参会券商人士则表示，保荐机构会倾向于寻求更公允合理的发行定价，跟投制度对于券商而言更多是机遇。（上证报）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 6">6</span>
+          <a href="" target="_blank" title="美团打车“聚合模式”新增十五城试点，支持餐饮商家页面一键叫车">美团打车“聚合模式”新增十五城试点，支持餐饮商家页面一键叫车</a>
+        </div>
+        <div class="details">
+          36氪讯，美团打车今日新增十五个试点城市，均以“聚合模式”展开。具体城市包括：苏州、杭州、温州、宁波、天津、重庆、西安、成都、郑州、武汉、深圳、长沙、合肥、昆明、广州。即日起，这些城市用户可以在美团App一键呼叫不同平台车辆，也可以在美团餐饮商家页面直接叫车。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 7">7</span>
+          <a href="https://www.yicai.com/news/100194219.html" target="_blank" title="东风汽车推H计划，高端新能源车品牌独立运营">东风汽车推H计划，高端新能源车品牌独立运营</a>
+        </div>
+        <div class="details">
+          东风公司正在筹备高端新能源车项目，内部代号“H计划”。该项目是一个独立的高端品牌，将会自建销售渠道，不从属于东风公司已有的自主品牌乘用车公司。 该项目的投资额、制造工厂等信息尚不明确。查询招聘信息可知，H事业部隶属于东风公司香港上市公司东风汽车集团股份有限公司。该公司旗下已有两家新能源公司，分别为东风电动车辆股份有限公司和易捷特新能源汽车有限公司。（第一财经）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 8">8</span>
+          <a href="http://www.chinanews.com/cj/2019/05-19/8841108.shtml" target="_blank" title="北京将建100平方公里自动驾驶示范区">北京将建100平方公里自动驾驶示范区</a>
+        </div>
+        <div class="details">
+          北京市海淀区19日出台的《关于支持中关村科学城智能网联汽车产业创新引领发展的十五条措施》显示，北京市海淀区已经着手建设范围100平方公里的中关村自动驾驶示范区，并建成了全国首个封闭测试场地。（中国新闻网）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 9">9</span>
+          <a href="http://www.chinanews.com/gn/2019/05-19/8841094.shtml" target="_blank" title="北京加快人工智能原始创新，重大项目突破最高可获2亿元">北京加快人工智能原始创新，重大项目突破最高可获2亿元</a>
+        </div>
+        <div class="details">
+          为加快人工智能创新引领发展，北京市海淀区19日出台科技创新举措，强化人工智能原始创新和关键技术源头创新，对实现重大突破的项目最高给予2亿元资金支持。（中国新闻网）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 10">10</span>
+          <a href="" target="_blank" title="拼多多：3.49万秒杀五菱宏光活动开始后18秒售罄">拼多多：3.49万秒杀五菱宏光活动开始后18秒售罄</a>
+        </div>
+        <div class="details">
+          36氪讯，5月19日零点，拼多多平台“3.49万抢五菱宏光”活动开启，由于开抢前逾22万人预约，拼多多决定追加600万现金补贴，将3.49万秒杀的幸运名单从10人增加到400人，活动开始后18秒，400台五菱宏光售罄。拼多多平台后续在继续补贴消费者以4.99万元购满200台后，将恢复5.28万元原价。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 11">11</span>
+          <a href="http://www.xinhuanet.com/world/2019-05/19/c_1124514180.htm" target="_blank" title="瑞典将禁止户外公共区域吸烟，禁令也适用于电子烟">瑞典将禁止户外公共区域吸烟，禁令也适用于电子烟</a>
+        </div>
+        <div class="details">
+          据瑞典电视台18日报道，瑞典禁止在户外公共区域吸烟的法律将于7月生效。从7月1日起，新的禁烟令将涵盖咖啡馆和餐馆的户外服务区、公共游乐场、公共汽车候车亭、火车站、体育场及公共建筑入口等。该禁令也适用于电子烟。（新华社）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 12">12</span>
+          <a href="" target="_blank" title="称“联想断供华为”的知乎用户发文道歉">称“联想断供华为”的知乎用户发文道歉</a>
+        </div>
+        <div class="details">
+          36氪讯，此前，有谣言传出称联想断供华为，知乎认证为“香港科技大学、纳米科学技术博士”的“灰机”发文称“已经证实，率先断货”。在联想发出声明后，该用户发文道歉，称“本帖的评价建立在谣言以及部分员工回复的基础上，现已删除，并向联想集团及广大关注此事件的网友道歉”。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 13">13</span>
+          <a href="http://news.cnstock.com/news,bwkx-201905-4377057.htm" target="_blank" title="周延礼：建议设立供应链金融类投资基金">周延礼：建议设立供应链金融类投资基金</a>
+        </div>
+        <div class="details">
+          在2019中国供应链高峰论坛上，国务院参事室特约研究员、原保监会副主席周延礼对做好供应链金融服务工作提出了建议。他建议，设立供应链金融类投资基金。加大对供应链核心企业等供应链金融服务机构的投资力度，增强其资本实力，为开展供应链金融提供坚实的资本基础。（上海证券报）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 14">14</span>
+          <a href="" target="_blank" title="社区安全服务平台“蓝光安科”获1000万天使轮融资">社区安全服务平台“蓝光安科”获1000万天使轮融资</a>
+        </div>
+        <div class="details">
+          36氪讯，社区安全服务平台“蓝光安科”已于2018年10月完成1000万天使轮融资，本轮投资方为个人。蓝光安科成立于2017年，从电梯安全切入社区安全市场，目前共有电梯卫士和钥匙宝两款产品。目前，蓝光安科正寻求5000万融资，该资金计划用于产品储备（2500万元）、技术研发（1000万元）、提升管理（500万元）、财务费用（500万元）和备用（500万元）。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 15">15</span>
+          <a href="https://www.tianyancha.com/company/95051965" target="_blank" title="B站主体公司出质声音内容平台“M站”股权">B站主体公司出质声音内容平台“M站”股权</a>
+        </div>
+        <div class="details">
+          36氪讯，天眼查数据显示，5月16日，B站主体公司上海幻电信息科技有限公司，将所持有的北京喵斯拉网络科技有限公司全部股权出质给一家由香港公司控股的公司。北京喵斯拉是二次元声音内容分享平台“M站”的运营公司，“B站”持股66.47%，是该公司的大股东。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 16">16</span>
+          <a href="https://www.tianyancha.com/company/32106442" target="_blank" title="联想、蚂蚁金服退出旷视科技股东行列，李开复卸任董事">联想、蚂蚁金服退出旷视科技股东行列，李开复卸任董事</a>
+        </div>
+        <div class="details">
+          36氪讯，天眼查数据显示，5月16日，北京旷视科技有限公司发生多项变更，联想、创新工场及蚂蚁金服旗下公司退出该公司股东行列，李开复、蚂蚁金服韩歆毅、王明耀、唐文斌及杨沐退出董事行列。变更后该公司最大股东为旷视科技创始人印奇，持股75%。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 17">17</span>
+          <a href="https://mp.weixin.qq.com/s/1Ja8CKf-HaCJlCzLOpVFRw" target="_blank" title="雄安又增加百余个5G试验站">雄安又增加百余个5G试验站</a>
+        </div>
+        <div class="details">
+          36氪讯，近日，雄安新区再次批量开通百余个5G试验站，三县人流密集的营业厅还开设了5G体验专区。此次开通的5G试验站，主要集中在雄安三县县城、白洋淀大道、雄县温泉城、京雄高铁站房区域内，均接入了升级NSA核心网，具备5G语音和数据下载功能。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 18">18</span>
+          <a href="https://www.tianyancha.com/company/810785077" target="_blank" title="广州顺丰顺丰速运有限公司高层管理人员变更">广州顺丰顺丰速运有限公司高层管理人员变更</a>
+        </div>
+        <div class="details">
+          36氪讯，天眼查数据显示，5月15日，广州顺丰速运有限公司发生高级管理人员变更，法定代表人由顺丰集团副总裁潘葛变更为顺丰速运广州区负责人姚俊，潘葛同时退出经理和董事职位，由姚俊接任。董事备案由潘葛等三人变更为姚俊一人。该公司全资股东为顺丰速运有限公司，最终受益人为王卫。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 19">19</span>
+          <a href="http://xinsheng.huawei.com/cn/index.php?app=forum&amp;mod=Detail&amp;act=index&amp;id=4299781" target="_blank" title="任正非：美国禁令影响是局部的，我们已经为此做准备了">任正非：美国禁令影响是局部的，我们已经为此做准备了</a>
+        </div>
+        <div class="details">
+          任正非表示，受到美国禁令的影响，华为的增长预计会放缓，但影响有限，营收增长年率预计低于20%。2014-2018年间，华为销售收入的复合年均增长率为26%。这是美国“封锁华为”后，任正非首次接受媒体采访任正非还称，华为“从未做过任何触犯法律的事情”，美国供应商不能向华为提供芯片“也好”，“我们已经为此做准备了”。　他还表示，“我们不会在美国的要求下改变我们的管理层，也不会接受监管。”（日经新闻）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 20">20</span>
+          <a href="https://www.pingwest.com/w/188131" target="_blank" title="趣头条聚焦下沉市场女性，推出“放心看计划”">趣头条聚焦下沉市场女性，推出“放心看计划”</a>
+        </div>
+        <div class="details">
+          趣头条号《下沉市场女性健康报告》显示，趣头条的下沉市场用户超过 70%；女性用户超过60%，而大健康内容的读者中女性比例超过了趣头条大盘。另外，趣头条号推出“放心看计划”，希望从低质内容清理、优质IP扶持、权威专家指导、优势医疗资源下乡四个方面，建立健全大健康内容生态，为三线及以下城市提供“放心看”的健康资讯甚至资源。（品玩）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 21">21</span>
+          <a href="http://tech.qq.com/a/20190519/001409.htm" target="_blank" title="苹果自制5G调制解调器将降低设备功耗和大小，而不是价格">苹果自制5G调制解调器将降低设备功耗和大小，而不是价格</a>
+        </div>
+        <div class="details">
+          据外媒报道，苹果自己打造的5G调制解调器有望于2025年推出。这种5G调制解调器将有助于降低设备的功耗和大小，而不是价格。换句话说，iPhone价格不会因为内置了苹果调制解调器而在2025年突然下跌。调制解调器与屏幕的不同之处在于，在理想情况下，调制解调器可以与设备内部的其他部件配合使用，以实现尺寸和功耗的降低。（腾讯科技）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 22">22</span>
+          <a href="https://www.tianyancha.com/company/3031325697" target="_blank" title="“哈啰出行”四川公司注销">“哈啰出行”四川公司注销</a>
+        </div>
+        <div class="details">
+          36氪讯，天眼查数据显示，5月16日，四川永安行共享科技有限公司状态显示“注销”，理由为“决议解散”。该公司成立于2017年，为哈罗单车主体公司江苏永安行低碳科技有限公司全资控股。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 23">23</span>
+          <a href="" target="_blank" title="《这就是街舞2》开播豆瓣评分9.7分">《这就是街舞2》开播豆瓣评分9.7分</a>
+        </div>
+        <div class="details">
+          36氪讯，5月18日晚，优酷《这就是街舞2》开播三小时豆瓣即开分，近5000名豆瓣用户打出9.7分。去年，《这就是街舞》第一季播出后，超5万名用户打出8.6分。
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 24">24</span>
+          <a href="http://tech.qq.com/a/20190519/001626.htm" target="_blank" title="智能手机公司在印度开打价格战，三星一加vivo等争相降价">智能手机公司在印度开打价格战，三星一加vivo等争相降价</a>
+        </div>
+        <div class="details">
+          一加推出的OnePlus 7售价32999卢比，比前一款产品的售价低6%，相当于OnePlus 6T目前的发售价格。此外，vivo上周将vivo V15 Pro的一个基础版本的价格降低了2000卢比，降低至约27000卢比。最近，三星的S10也经历了一轮降价，为客户提供了近5000卢比的折扣。一加和vivo均拒绝就其定价策略置评。（腾讯科技）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 25">25</span>
+          <a href="http://www.chinanews.com/cj/2019/05-18/8840817.shtml" target="_blank" title="报告：中国是人工智能专利布局最多的国家">报告：中国是人工智能专利布局最多的国家</a>
+        </div>
+        <div class="details">
+          中国新一代人工智能发展战略研究院发布了两份报告。报告指出，中国是人工智能专利布局最多的国家。中国人工智能科技产业的发展是需求牵引的。在745家人工智能企业中，应用层企业占比高达75.2%，广泛分布在包括智能制造、科技金融、数字内容和新媒体、新零售和智能安防在内的18个应用领域。（中国新闻网）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 26">26</span>
+          <a href="http://tech.qq.com/a/20190519/001493.htm" target="_blank" title="华为在巴西重启智能手机业务，并计划在当地生产">华为在巴西重启智能手机业务，并计划在当地生产</a>
+        </div>
+        <div class="details">
+          据外媒报道，华为重新启动了在巴西的智能手机业务，并维持了在巴西建立本地制造业务的计划。2015年，华为关闭了在巴西的消费者事业部门。本周，华为在巴西推出了两款高端智能手机：P30 Pro和P30 Lite。与五年前的运营方式不同，华为现在与巴西主要零售商结成了合作伙伴关系。而在五年前，华为是向移动运营商供货，只有十分之一新设备通过移动运营商销售。（腾讯科技）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 27">27</span>
+          <a href="https://tech.sina.com.cn/i/2019-05-18/doc-ihvhiews2854179.shtml" target="_blank" title="陆奇：创业是历史趋势，中国创业者迎黄金时代">陆奇：创业是历史趋势，中国创业者迎黄金时代</a>
+        </div>
+        <div class="details">
+          Y Combinator 中国18日在北京召开创业者见面会，YC中国创始人兼CEO、YC全球研究院院长陆奇表示，创业是人类进程不可避免的必然方向，而市场则是人类“发明”的最好的平台，可以把人类对知识，技术和财富的追求有机的聚焦在一起。同时陆奇认为，中国已经开始改变全球科技驱动创新的格局。对中国创业者而言，陆奇认为从某种意义上来说，今天是一个黄金时代。（新浪科技）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 28">28</span>
+          <a href="https://tech.sina.com.cn/mobile/n/n/2019-05-19/doc-ihvhiews2850389.shtml" target="_blank" title="苹果宣布Apple Park开园">苹果宣布Apple Park开园</a>
+        </div>
+        <div class="details">
+          苹果宣布Apple Park正式开园，Apple Park的中心位置已经搭建好了彩虹舞台。苹果的员工们也会收到印有彩虹Logo的胸针，同时园区的一些楼梯也都换上了彩虹楼梯，而纸杯上印上了彩虹颜色。苹果全新总部大楼被称为“Apple Park”，是乔布斯生前所设计。占地面积280万平方英的环状建筑，中间是大型庭院。（新浪科技）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 29">29</span>
+          <a href="https://www.cnbeta.com/articles/tech/848525.htm" target="_blank" title="库克演讲：“在某些方面我们这一代人已经失败了”">库克演讲：“在某些方面我们这一代人已经失败了”</a>
+        </div>
+        <div class="details">
+          苹果的首席执行官刚刚向新奥尔良杜兰大学的学生发表了毕业演讲，并敦促他们要比他们这一代做得更好，要大胆地实现他们的目标。“在某些重要的方面，我这一代人已经失败了，”他说。 “我们花了太多时间进行辩论，我们一直专注于打斗，而没有足够重视进步。”库克将气候变化问题视为所有人的问题。（cnBeta）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 30">30</span>
+          <a href="https://tech.163.com/19/0519/07/EFHA5CGB00097U7T.html" target="_blank" title="未来20年中国将成电动汽车主战场，销量占全球一半">未来20年中国将成电动汽车主战场，销量占全球一半</a>
+        </div>
+        <div class="details">
+          彭博新能源财经发布的最新报告显示，随着美国和欧洲政府推动电动汽车技术发展，中国将成为未来20年电动汽车制造商的主要战场。报告指出，2018年全球电动汽车销量首次突破100万辆后，明年亚洲国家的电动汽车销量将达200万辆。研究人员表示，中国目前占全球电动汽车销量的一半以上，但其他地区将开始迎头赶上。到2040年，中国电动汽车市场份额将缩减至25%左右。（网易科技）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 31">31</span>
+          <a href="http://news.haiwainet.cn/n/2019/0519/c3541093-31559357.html" target="_blank" title="美国波音公司承认737 MAX飞行模拟器存在缺陷">美国波音公司承认737 MAX飞行模拟器存在缺陷</a>
+        </div>
+        <div class="details">
+          据法新社报道，美国波音公司承认737 MAX系列飞行模拟器软件存在缺陷。从2018年10月到今年3月，波音737 MAX飞机在5个月内发生印尼狮航和埃塞俄比亚航空两次坠机事故，造成346人死亡。部分航空运营商陆续宣布停飞这一机型。波音公司面临向全球监管机构提供软件更新和新的培训计划的压力。（海外网）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 32">32</span>
+          <a href="http://tech.qq.com/a/20190519/000715.htm" target="_blank" title="世界首富贝索斯：未来太空生态系统，能容纳万亿人">世界首富贝索斯：未来太空生态系统，能容纳万亿人</a>
+        </div>
+        <div class="details">
+          近日，亚马逊CEO杰夫·贝索斯展示了蓝色起源公司的月球登陆器，该公司还计划让人类重返月球并定居。同时，贝索斯还展示了太空殖民愿景。他构想的栖息地的气候总会很宜人。贝索斯表示：如果我们能在太阳系中穿梭并定居，那么就能有一万亿人遍布在太阳系中，这意味着我们将有一千个莫扎特和一千个爱因斯坦。（腾讯科技）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 33">33</span>
+          <a href="http://www.nbd.com.cn/articles/2019-05-18/1333052.html" target="_blank" title="嘉楠耘智创始人张楠赓：不排除冲刺科创板">嘉楠耘智创始人张楠赓：不排除冲刺科创板</a>
+        </div>
+        <div class="details">
+          比特币矿机生产商嘉楠耘智此前闯关港交所以失败告终，就市场关于嘉楠耘智是否将冲刺科创板的猜测，张楠赓表示，“我不评论IPO，是不允许评论的，我觉得都有可能性。”张楠赓透露，嘉楠耘智的目标是计划用3年时间实现公司矿机与AI业务收入比例达到1:1，2019年公司的AI业务的收入预计达数千万元级别。（每日经济新闻）
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 34">34</span>
+          <a href="https://mp.weixin.qq.com/s/qbCSqzUd8I8GpjbxOcDArA" target="_blank" title="联想官方声明：联想未向华为断供">联想官方声明：联想未向华为断供</a>
+        </div>
+        <div class="details">
+          36氪讯，联想集团表声明称，目前联想向华为供货正常。对于网上“断供”等不实之词，公司已经取证并将诉诸法律手段，追究造谣者责任。联想称，不明势力针对联想的舆论攻击在过去一年已连续发起多次，谣言广度和深度超过正常商业竞争范围，已向有关方面汇报，望网友勿相信相关传言。“华为是联想PC和服务的重要客户，我们将在严格遵守联想业务所在国家和地区的相关法律及合规条例的基础上，持续向华为销售产品和服务。”
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="info">
+        <div class="rank">
+          <span title="Ranking 35">35</span>
+          <a href="https://36kr.com/p/5206099" target="_blank" title="趣头条iOS被下架，或因产品违反App Store规则">趣头条iOS被下架，或因产品违反App Store规则</a>
+        </div>
+        <div class="details">
+          36氪讯，资讯类明星App趣头条已无法在App Store搜索到，但各大Android应用商店里仍然显示正常，并未下架。对此，趣头条方面回复称，关于趣头条App在App Store中搜索不到的情况，目前已与苹果官方取得联系，并在紧急排查相关问题，苹果手机已安装用户暂不影响使用。
+        </div>
+      </div>
+    </li>
+    
+</ul>
+  <div class="footer">
+    <p>
+      <a href="https://github.com/jaywcjlove/github-rank/network" target="_blank">
+        <img src="https://img.shields.io/github/forks/jaywcjlove/github-rank.svg">
+      </a>
+      <a href="https://github.com/jaywcjlove/github-rank/stargazers" target="_blank">
+        <img src="https://img.shields.io/github/stars/jaywcjlove/github-rank.svg">
+      </a>
+      <a href="https://www.npmjs.com/package/@wcj/github-rank" target="_blank">
+        <img src="https://img.shields.io/npm/v/@wcj/github-rank.svg">
+      </a>
+      <a href="https://unpkg.com/@wcj/github-rank/web/index.html" target="_blank">
+        <img src="https://img.shields.io/npm/v/@wcj/github-rank.svg?label=unpkg">
+      </a>
+    </p>
+    <div class="time">Last cache created on 2019/5/19 by Github API v3.</div>
+    Create by <a href="https://github.com/jaywcjlove" target="_blank">小弟调调™</a>.
+  </div>
+</body>
+</html>
